@@ -55,7 +55,7 @@ class Device: NSObject {
                 if let name = blName {
                     // If it's just "iPhone" or "iPad", there's a chance we can get the model name in the following code
                     if name != "iPhone" && name != "iPad" {
-                        return name
+                        return appleDeviceNames[name] ?? name
                     }
                 }
             }
@@ -71,11 +71,11 @@ class Device: NSObject {
             }
             if let name = peripheral?.name {
                 if name.trimmingCharacters(in: .whitespaces).count != 0 {
-                    return name
+                    return appleDeviceNames[name] ?? name
                 }
             }
             if let mod = model {
-                return mod
+                return appleDeviceNames[mod] ?? mod
             }
             // iBeacon
             if let adv = advData {
@@ -92,7 +92,7 @@ class Device: NSObject {
                 }
             }
             if let name = blName {
-                return name
+                return appleDeviceNames[name] ?? name
             }
             if let mac = macAddr {
                 return mac // better than uuid

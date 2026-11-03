@@ -1,4 +1,5 @@
 let appleDeviceNames = [
+    "iPhone18,1": "iPhone 17 Pro",
     "iPhone1,1": "iPhone",
     "iPhone1,2": "iPhone 3G",
     "iPhone2,1": "iPhone 3GS",
